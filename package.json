@@ -1,17 +1,20 @@
 {
-  "name": "new-app",
+  "name": "Random",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Sanmi",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack --watch",
-    "dev-server": "webpack-dev-server"
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
+    "start":"node server/server.js",
+    "dev-server": "webpack-dev-server",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "babel-core": "^6.26.3", 
     "babel-loader": "7",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-preset-env": "1.5.2",
